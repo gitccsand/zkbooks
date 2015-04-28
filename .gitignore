@@ -1,3 +1,5 @@
+WebContent/WEB-INF/lib
+gettingStarted/getZkUp/WebContent/WEB-INF/lib
 developersreference/developersreference/target
 developersreference/integration.cdi/.settings
 developersreference/integration.ejb/.settings
@@ -24,3 +26,17 @@ zkessentials/storewithdb/WebContent/META-INF
 zkessentials/storewithdb/WebContent/WEB-INF/lib
 zkspringessentials/zkspringcoresec/target
 zkspringessentials/zkspringwf/target
+/build/
+.classpath
+.project
+.settings
+myzk/.classpath
+myzk/.project
+myzk/.metadata
+myzk/.settings
+myzk/.settings/
+myzk/bin/
+myzk/build/
+myzk/classes/
+myzk/WebContent/WEB-INF/lib
+myzk/WebContent/WEB-INF/classes
