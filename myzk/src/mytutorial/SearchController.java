@@ -1,6 +1,7 @@
 package mytutorial;
 
 import java.util.List;
+import java.util.Set;
 
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.select.SelectorComposer;
@@ -9,9 +10,10 @@ import org.zkoss.zk.ui.select.annotation.Wire;
 import org.zkoss.zul.Button;
 import org.zkoss.zul.Image;
 import org.zkoss.zul.Label;
-import org.zkoss.zul.ListModel;
+import org.zkoss.zul.ListModelList;
 import org.zkoss.zul.Listbox;
 import org.zkoss.zul.Textbox;
+import org.zkoss.zul.ext.Selectable;
 
 import mytutorial.model.Car;
 import mytutorial.service.CarService;
@@ -21,12 +23,12 @@ import mytutorial.service.impl.CarServeImpl;
 public class SearchController extends SelectorComposer<Component> {
 	
 	
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 2L;
 	
 	@Wire
-	private Textbox KeywordBox;
+	private Textbox keywordBox;
 	@Wire
-	private Button SearchButton;
+	private Button searchButton;
 	@Wire
 	private Listbox carListbox;
 	@Wire
@@ -46,9 +48,23 @@ public class SearchController extends SelectorComposer<Component> {
 	@SuppressWarnings("unchecked")
 	@Listen("onClick = #searchButton")	
 	public void search(){
-		String keyWord = KeywordBox.getValue();
+		String keyWord = keywordBox.getValue();
 		List<Car> result = carService.search(keyWord);
-		carListbox.setModel((ListModel<Car>) result);
+		carListbox.setModel(new ListModelList<Car>(result));
+//		carListbox.setModel((ListModelList<Car>) result);
+	}
+	
+	@Listen("onSelect = #carListbox")
+	public void carDetail(){
+		Set<Car> selection = ((Selectable<Car>)carListbox.getModel()).getSelection();
+		if(selection!=null & !selection.isEmpty()){
+			Car selected = selection.iterator().next();
+			previewImage.setSrc(selected.getPreview());
+			modelLabel.setValue(selected.getModel());
+			makeLabel.setValue(selected.getMake());
+			priceLabel.setValue(selected.getPrice().toString());
+			descriptionLabel.setValue(selected.getDescription());
+		}
 	}
 	
 	

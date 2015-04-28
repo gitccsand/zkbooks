@@ -1,7 +1,5 @@
-<?page title="window2" contentType="text/html;charset=UTF-8"?>
-<zk>
 <window title="Second Window" border="normal" width="100%"
-		apply="tutorial.SearchController">
+		apply="mytutorial.SearchController">
 		<hbox align="center">
 	 		Keyword:
 	 		<textbox id="keywordBox" />
@@ -13,11 +11,13 @@
 				<listheader label="Make" />
 				<listheader label="Price" width="20%"/>
 			</listhead>
-			<listitem>
-				<listcell label="car model"></listcell>
-				<listcell label="make"></listcell>
-				<listcell>$<label value="price" /></listcell>
-			</listitem>
+			<template name="model">
+				<listitem>
+			        <listcell label="${each.model}"></listcell>
+			        <listcell label="${each.make}"></listcell>
+			        <listcell>$<label value="${each.price}" /></listcell>
+			    </listitem>
+			</template>
 		</listbox>
 		<hbox style="margin-top:20px">
 			<image id="previewImage" width="250px" />
@@ -29,4 +29,3 @@
 			</vbox>
 		</hbox>
  </window>
-</zk>

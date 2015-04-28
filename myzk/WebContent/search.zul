@@ -1,4 +1,5 @@
-<window title="Search" width="600px" border="normal">
+<window title="Search" width="100%" border="normal" 
+		apply="tutorial.SearchController">
 	<hbox align="center">
 		Keyword:
 		<textbox id="keywordBox" />
@@ -11,9 +12,9 @@
 			<listheader label="Price" width="20%"/>
 		</listhead>
 	    <listitem>
-	        <listcell label="product name"></listcell>
-	        <listcell label="make"></listcell>
-	        <listcell>$<label value="price" /></listcell>
+	        <listcell label="car model"></listcell>
+			<listcell label="make"></listcell>
+			<listcell>$<label value="price" /></listcell>
 	    </listitem>
 	</listbox>
 	<hbox style="margin-top:20px">
