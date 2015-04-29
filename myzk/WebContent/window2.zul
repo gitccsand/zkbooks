@@ -1,11 +1,12 @@
-<window title="Second Window" border="normal" width="100%"
+<window title="Second Window" border="normal" width="600px" closable="true" sizable="true" draggable="true"
 		apply="mytutorial.SearchController">
 		<hbox align="center">
 	 		Keyword:
 	 		<textbox id="keywordBox" />
 	 		<button  id="searchButton" label="Search" image="/img/search.png" />
+		 	<button  id="back" label="返回" href="index.zul" />
 	 	</hbox>
-	 	<listbox id="carListbox" height="160px" emptyMessage="No car found in the result" >
+	 	<listbox id="carListbox" height="200px" emptyMessage="No car found in the result" >
 			<listhead>
 				<listheader label="Model" />
 				<listheader label="Make" />
@@ -20,7 +21,9 @@
 			</template>
 		</listbox>
 		<hbox style="margin-top:20px">
-			<image id="previewImage" width="250px" />
+			<vbox>
+				<image id="previewImage" width="250px" />
+			</vbox>
 			<vbox>
 				<label id="modelLabel" />
 				<label id="makeLabel" />
@@ -29,3 +32,4 @@
 			</vbox>
 		</hbox>
  </window>
+
