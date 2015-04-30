@@ -30,6 +30,8 @@ zkspringessentials/zkspringwf/target
 .classpath
 .project
 .settings
+.rar
+.zip
 myzk/.classpath
 myzk/.project
 myzk/.metadata
