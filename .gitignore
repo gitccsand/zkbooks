@@ -1,3 +1,10 @@
+#common
+.classpath
+.project
+.settings
+*.rar
+*.zip
+#directory
 WebContent/WEB-INF/lib
 gettingStarted/getZkUp/WebContent/WEB-INF/lib
 developersreference/developersreference/target
@@ -27,11 +34,6 @@ zkessentials/storewithdb/WebContent/WEB-INF/lib
 zkspringessentials/zkspringcoresec/target
 zkspringessentials/zkspringwf/target
 /build/
-.classpath
-.project
-.settings
-.rar
-.zip
 myzk/.classpath
 myzk/.project
 myzk/.metadata
