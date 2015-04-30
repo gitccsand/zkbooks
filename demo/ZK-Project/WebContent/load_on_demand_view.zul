@@ -1,0 +1,25 @@
+<div apply="demo.grid.load_on_demand.LoadOnDemandController">
+	<grid height="400px" model="${$composer.mailData}">
+		<columns>
+			<column label="From" width="100px" />
+			<column label="Subject" />
+			<column label="Received" width="150px" />
+			<column label="Size" width="100px" />
+		</columns>
+		<template name="model:group">
+			<group label="${each}" />
+		</template>
+		<template name="model">
+			<row>
+				<div>
+					<image style="padding: 0px 10px"
+						src="/img/Centigrade-Widget-Icons/EnvelopeOpen-16x16.png" />
+					<label value="${each.index}" />
+				</div>
+				<label value="${each.subject}" />
+				<label value="${each.date}" />
+				<label value="${each.size}" />
+			</row>
+		</template>
+	</grid>
+</div>

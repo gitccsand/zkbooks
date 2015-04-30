@@ -2,6 +2,9 @@
 <window border="normal" title="Get ZK Up and Running">
 	<vlayout>
 		<a href="window2.zul">window2.zul</a>
+		<a href="demo_boder_layout.zul">demo_boder_layout.zul</a>
+		<a href="myframe.zul">myframe.zul</a>
+		<a href="load_on_demand_view.zul">load_on_demand.zul</a>
 		<a href="demo_layout.zul">demo_layout.zul</a>
 		<a href="hello.zul">hello.zul</a>
 		<a href="search.zul">search.zul</a>
